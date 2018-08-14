@@ -11,7 +11,6 @@ export class CommonService {
   }
 
   public getLongMonthFormatter(): Intl.DateTimeFormat {
-    console.log(this.translateService.currentLang);
     return new Intl.DateTimeFormat('fr', { month: 'long' });
   }
 }
