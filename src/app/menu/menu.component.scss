@@ -1,0 +1,37 @@
+#app-menu {
+  color: lightgrey;
+
+  #menu-icon {
+    z-index: 1; 
+    position: absolute; 
+    top: 10px; 
+    right: 50px;
+
+    i {
+      font-size: 50px; 
+      cursor: pointer;
+    }
+  }
+
+  #menu-panel {
+    z-index: 1;
+    background-color: lightgrey;
+    border-radius: 10px;
+    position: absolute;
+    top: 75px;
+    right: 50px;
+    padding: 10px 0;
+
+    a {
+      display: block;
+      padding: 10px 40px;
+      color: black;
+    }
+
+    a:hover {
+      text-decoration: none;
+      background-color: lightskyblue;
+    }
+  }
+
+}

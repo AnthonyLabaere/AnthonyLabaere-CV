@@ -1,0 +1,89 @@
+.home-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+
+  .home-section {
+    position: relative;
+    min-width: 100vh;
+    min-height: 100vh;
+    overflow: hidden;
+
+    &.home-section-black {
+      background-color: black;
+      color: white;
+    }
+
+    &.home-section-white {
+      background-color: white;
+      color: black;
+    }
+
+    &.main-section {
+      background-color: black;
+      color: white;
+
+      & > .name-container {
+        margin-top: 15%;
+        margin-left: 10%;
+      }
+      & > .name-container > .name {
+        font-size: 80px;
+      }
+    }
+
+    .section-title {
+      text-align: center !important;
+      margin-right: auto;
+      margin-left: auto;
+
+      margin-top: 1%;
+      margin-bottom: 5%;
+
+      font-size: 40px;
+    }
+
+    .section-body {
+      font-size: 20px;
+      text-align: justify;
+
+      margin-top: 5%;
+    }
+
+    .section-text {
+      margin: auto;
+
+      .section-text-title {
+        font-weight: bold;
+      }
+    }
+
+    .section-body:before, .section-body:after,
+    .section-text:before, .section-text:after {
+      display: block;
+      margin: 20px 0;
+      content: "";
+      border-top: 3px solid lightskyblue;
+    }
+
+    .section-image {
+      text-align: center;
+
+      img {
+        height: 150px;
+      }
+    }
+
+    .section-carousel .section-carousel-slide {
+      height: 700px;
+      padding: 150px;
+
+      .environment-sub-title {
+        text-decoration: underline;
+      }
+    }
+  }
+}

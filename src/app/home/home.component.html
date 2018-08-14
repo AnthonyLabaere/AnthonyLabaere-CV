@@ -1,0 +1,96 @@
+<div class="home-container">
+
+  <section id="home" class="home-section main-section">
+    <div class="name-container">
+      <div class="name" [translate]="'home.name'"></div>
+      <div class="title" [translate]="'home.title'"></div>
+    </div>
+  </section>
+
+  <section id="about-me" class="home-section home-section-white">
+    <div class="section-title" [translate]="'about-me.title'"></div>
+    <div class="container section-body" [translate]="'about-me.body'"></div>
+  </section>
+
+  <section id="formation" class="home-section home-section-black">
+    <div class="section-title" [translate]="'formation.title'"></div>
+    <div class="container">
+      <div class="row" style="margin-bottom: 50px">
+        <div class="col-4 section-image">
+          <!--TODO : construire un objet formation comme Experience-->
+          <img src="assets/images/faidherbe_logo.gif" alt="{{'formation.body.cpge.alt' | translate}}" />
+        </div>
+        <div class="col-8 section-text">
+          <div class="section-text-title"><span [translate]="'formation.body.cpge.date'"></span><span [translate]="'formation.body.cpge.place'"></span></div>
+          <div [translate]="'formation.body.cpge.description'"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4 section-image">
+          <img src="assets/images/ecn_logo.png" alt="{{'formation.body.ecn.alt' | translate}}" />
+        </div>
+        <div class="col-8 section-text">
+          <div class="section-text-title"><span [translate]="'formation.body.ecn.date'"></span><span [translate]="'formation.body.ecn.place'"></span></div>
+          <div [translate]="'formation.body.ecn.description'"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experiences"  class="home-section home-section-white">
+    <div class="section-title" [translate]="'experiences.title'"></div>
+    <div class="container">
+      <carousel [interval]="0" [noWrap]="true" class="section-carousel">
+        <slide *ngFor="let experience of experiences">
+          <div class="py-5 bg-dark text-white section-carousel-slide">
+            <h2 class="text-center" style="margin-bottom: 50px">{{experience.customer}}</h2>
+            <div class="lead">
+              <div class="mb-3">
+                <h4 [translate]="'experiences.body.experiencePanel.context.title'"></h4>
+                <div *ngFor="let contextRow of experience.context">{{contextRow}}</div>
+              </div>
+              <div class="mb-3">
+                <h4 [translate]="'experiences.body.experiencePanel.activity.title'"></h4>
+                <div *ngFor="let activity of experience.activities">
+                  <h5>{{'activityType.' + activity.type | translate}}{{'experiences.body.experiencePanel.activity.type.suffix' | translate}}</h5>
+                  <div *ngFor="let activityRow of activity.list">{{activityRow}}</div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h4 [translate]="'experiences.body.experiencePanel.environment.title'"></h4>
+                <div>
+                  <span class="environment-sub-title" [translate]="'experiences.body.experiencePanel.environment.ide.title'"></span>
+                  <span [translate]="'experiences.body.experiencePanel.environment.ide.suffix'"></span>
+                  {{experience.environment.ide}}.
+                </div>
+                <div>
+                  <span class="environment-sub-title" [translate]="'experiences.body.experiencePanel.environment.technologies.title'"></span>
+                  <span [translate]="'experiences.body.experiencePanel.environment.technologies.suffix'"></span>
+                  <span *ngFor="let technology of experience.environment.technologies; let lastTechnology = last;">{{technology}}{{!lastTechnology ? ', ': ''}}</span>
+                </div>
+                <div>
+                  <span class="environment-sub-title" [translate]="'experiences.body.experiencePanel.environment.versioning.title'"></span>
+                  <span [translate]="'experiences.body.experiencePanel.environment.versioning.suffix'"></span>
+                  {{experience.environment.versioning}}.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-caption">
+            <h4>{{getExperiencePeriod(experience)}}</h4>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+  </section>
+
+  <section id="competences" class="home-section home-section-black">
+    <div class="section-title" [translate]="'competences.title'"></div>
+  </section>
+
+  <section id="leisure" class="home-section home-section-white">
+    <div class="section-title" [translate]="'leisure.title'"></div>
+  </section>
+</div>
+

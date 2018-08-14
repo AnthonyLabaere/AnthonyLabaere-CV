@@ -1,0 +1,79 @@
+{
+  "activityType": {
+    "0": "Gestion de projet",
+    "1": "Développement"
+  },
+  "menu": {
+    "home": "Accueil",
+    "about-me": "Présentation",
+    "formation": "Formation",
+    "experiences": "Expériences",
+    "competences": "Compétences",
+    "leisure": "Loisirs"
+  },
+  "home": {
+    "name": "Anthony Labaere",
+    "title": "Ingénieur Études et Développement"
+  },
+  "about-me": {
+    "title": "Présentation",
+    "body": "D'une formation d'ingénieur généraliste avec une spécialité en informatique, je suis aujourd'hui développeur web full stack dans le monde des systèmes d'information. Aujourd'hui c'est l'aspect fonctionnel qui me passionne, que ce soit au niveau back ou front. Je n'ai pas vocation à devenir expert technique, je souhaite plutôt m'orienter vers la relation client mais aussi la gestion de projet."
+  },
+  "formation": {
+    "title": "Formation",
+    "body": {
+      "cpge": {
+        "alt": "Faidherbe logo",
+        "date": "2008 - 2010 : ",
+        "place": "Lycée Faidherbe",
+        "description": "CPGE (Classe Préparatoire aux Grandes Écoles) : MPSI et MP*"
+      },
+      "ecn": {
+        "alt": "ECN logo",
+        "date": "2010 - 2014 : ",
+        "place": "École Centrale Nantes",
+        "description": "Ingénieur Généraliste avec spécialité informatique"
+      }
+    }
+  },
+  "experiences": {
+    "title": "Expériences",
+    "body": {
+      "experiencePanel": {
+        "period": {
+          "separator": " à "
+        },
+        "context": {
+          "title": "Contexte :"
+        },
+        "activity": {
+          "title": "Activité",
+          "type": {
+            "suffix": " : "
+          }
+        },
+        "environment": {
+          "title": "Environnement",
+          "ide": {
+            "title": "IDE",
+            "suffix": " : "
+          },
+          "technologies": {
+            "title": "Technologies",
+            "suffix": " : "
+          },
+          "versioning": {
+            "title": "Versionning",
+            "suffix": " : "
+          }
+        }
+      }
+    }
+  },
+  "competences": {
+    "title": "Compétences"
+  },
+  "leisure": {
+    "title": "Loisirs"
+  }
+}
