@@ -7,14 +7,15 @@
     </div>
   </section>
 
+  <!-- TODO : faire un composant pour chaque section ? -->
   <section id="about-me" class="home-section home-section-white">
     <div class="section-title" [translate]="'about-me.title'"></div>
-    <div class="container section-body" [translate]="'about-me.body'"></div>
+    <div class="container section-container section-body" [translate]="'about-me.body'"></div>
   </section>
 
   <section id="formation" class="home-section home-section-black">
     <div class="section-title" [translate]="'formation.title'"></div>
-    <div class="container">
+    <div class="container section-container">
       <!--TODO : construire un objet formation comme Experience-->
       <div class="row section-image-container">
         <div class="col-4 section-image">
@@ -40,48 +41,58 @@
 
   <section id="experiences"  class="home-section home-section-white">
     <div class="section-title" [translate]="'experiences.title'"></div>
-    <div class="container">
-      <carousel [interval]="0" [noWrap]="true" class="section-carousel">
-        <slide *ngFor="let experience of experiences">
-          <div class="py-5 bg-dark text-white section-carousel-slide">
-            <h2 class="text-center" style="margin-bottom: 50px">{{experience.customer}}</h2>
-            <div class="lead">
-              <div class="mb-3">
-                <h4 [translate]="'experiences.body.experiencePanel.context.title'"></h4>
-                <div *ngFor="let contextRow of experience.context">{{contextRow}}</div>
-              </div>
-              <div class="mb-3">
-                <h4 [translate]="'experiences.body.experiencePanel.activity.title'"></h4>
-                <div *ngFor="let activity of experience.activities">
-                  <h5>{{'activityType.' + activity.type | translate}}{{'experiences.body.experiencePanel.activity.type.suffix' | translate}}</h5>
-                  <div *ngFor="let activityRow of activity.list">{{activityRow}}</div>
-                </div>
-              </div>
-              <div class="mb-3">
-                <h4 [translate]="'experiences.body.experiencePanel.environment.title'"></h4>
-                <div>
-                  <span class="environment-sub-title" [translate]="'experiences.body.experiencePanel.environment.ide.title'"></span>
-                  <span [translate]="'experiences.body.experiencePanel.environment.ide.suffix'"></span>
-                  {{experience.environment.ide}}.
-                </div>
-                <div>
-                  <span class="environment-sub-title" [translate]="'experiences.body.experiencePanel.environment.technologies.title'"></span>
-                  <span [translate]="'experiences.body.experiencePanel.environment.technologies.suffix'"></span>
-                  <span *ngFor="let technology of experience.environment.technologies; let lastTechnology = last;">{{technology}}{{!lastTechnology ? ', ': ''}}</span>
-                </div>
-                <div>
-                  <span class="environment-sub-title" [translate]="'experiences.body.experiencePanel.environment.versioning.title'"></span>
-                  <span [translate]="'experiences.body.experiencePanel.environment.versioning.suffix'"></span>
-                  {{experience.environment.versioning}}.
-                </div>
-              </div>
+    <div class="container section-container section-list-container" [@containerListAccordion]="experiencesContainerState">
+
+      <div class="section-list">
+        <div class="row section-list-element" *ngFor="let experience of experiences" (click)="experiencesContainerState = 'accordion'; selectedExperience = experience">
+          <div class="col col-10 col-title">
+            <h4>{{getExperiencePeriod(experience)}} - {{experience.customer}}</h4>
+          </div>
+          <div class="col col-2 col-icon">
+            <i class="fa fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-accordion">
+        <div class="row section-accordion-title">
+          <div class="col col-1 col-back-icon" (click)="experiencesContainerState = 'list'; selectedExperience = undefined">
+            <i class="fa fa-arrow-left"></i>
+          </div>
+          <div class="col col-10 col-title">
+            <h2 class="text-center">{{selectedExperience?.customer}}</h2>
+          </div>
+        </div>
+
+        <accordion>
+          <accordion-group heading="{{'experiences.body.experiencePanel.context.title' | translate}}" [isOpen]="true">
+            <div *ngFor="let contextRow of selectedExperience?.context">{{contextRow}}</div>
+          </accordion-group>
+          <accordion-group heading="{{'experiences.body.experiencePanel.activity.title' | translate}}">
+            <div *ngFor="let activity of selectedExperience?.activities">
+              <h5>{{'activityType.' + activity.type | translate}}{{'experiences.body.experiencePanel.activity.type.suffix' | translate}}</h5>
+              <div *ngFor="let activityRow of activity.list">{{activityRow}}</div>
             </div>
-          </div>
-          <div class="carousel-caption">
-            <h4>{{getExperiencePeriod(experience)}}</h4>
-          </div>
-        </slide>
-      </carousel>
+          </accordion-group>
+          <accordion-group heading="{{'experiences.body.experiencePanel.environment.title' | translate}}">
+            <div>
+              <span class="environment-sub-title" [translate]="'experiences.body.experiencePanel.environment.ide.title'"></span>
+              <span [translate]="'experiences.body.experiencePanel.environment.ide.suffix'"></span>
+              {{selectedExperience?.environment.ide}}.
+            </div>
+            <div>
+              <span class="environment-sub-title" [translate]="'experiences.body.experiencePanel.environment.technologies.title'"></span>
+              <span [translate]="'experiences.body.experiencePanel.environment.technologies.suffix'"></span>
+              <span *ngFor="let technology of selectedExperience?.environment.technologies; let lastTechnology = last;">{{technology}}{{!lastTechnology ? ', ': ''}}</span>
+            </div>
+            <div>
+              <span class="environment-sub-title" [translate]="'experiences.body.experiencePanel.environment.versioning.title'"></span>
+              <span [translate]="'experiences.body.experiencePanel.environment.versioning.suffix'"></span>
+              {{selectedExperience?.environment.versioning}}.
+            </div>
+          </accordion-group>
+        </accordion>
+      </div>
     </div>
   </section>
 

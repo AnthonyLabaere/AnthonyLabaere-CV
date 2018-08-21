@@ -15,9 +15,9 @@ export class Experience {
     this.environment = environment;
   }
 
-  public getPeriod(separator: string, monthFormatter: Intl.DateTimeFormat, capitalizeFirstLetter: Function): string {
-    return capitalizeFirstLetter(monthFormatter.format(this.startDate)) + ' ' + this.startDate.getFullYear() +
-      separator + capitalizeFirstLetter(monthFormatter.format(this.endDate)) + ' ' + this.endDate.getFullYear();
+  public getPeriod(separator: string): string {
+    return ((this.startDate.getMonth() + 1) < 10 ? '0' : '') + (this.startDate.getMonth() + 1) + '/' + this.startDate.getFullYear() +
+      separator + ((this.endDate.getMonth() + 1) < 10 ? '0' : '') + (this.endDate.getMonth() + 1) + '/' + this.endDate.getFullYear();
   }
 }
 

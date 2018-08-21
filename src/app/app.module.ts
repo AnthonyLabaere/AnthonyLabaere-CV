@@ -4,7 +4,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {RouterModule, Routes} from '@angular/router';
-import {CarouselModule} from 'ngx-bootstrap';
+import {AccordionModule} from 'ngx-bootstrap';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -42,7 +44,7 @@ const appRoutes: Routes = [
         deps: [HttpClient]
       }
     }),
-    CarouselModule.forRoot()
+    AccordionModule.forRoot()
   ],
   providers: [
     CommonService,

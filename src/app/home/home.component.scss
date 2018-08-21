@@ -77,12 +77,60 @@
       border-top: 3px solid lightskyblue;
     }
 
-    .section-carousel .section-carousel-slide {
-      height: 700px;
-      padding: 150px;
+    .section-container {
+      margin-bottom: 100px;
 
-      .environment-sub-title {
-        text-decoration: underline;
+      &.section-list-container {
+
+        white-space: nowrap;
+        float:none;
+        clear: both;
+  
+        .section-list {
+          display: inline-block;
+          width: 100%;
+  
+          .section-list-element {
+            cursor: pointer;
+            border-bottom: 1px solid lightskyblue;
+    
+            .col-title {
+              padding: 25px;
+    
+              h4 {
+                margin: auto;
+              }
+            }
+    
+            .col-icon {
+              text-align: right;
+              margin: auto;
+              font-size: 25px;
+            }
+          }
+    
+          .section-list-element:hover {
+            background-color: lightgray;
+          }
+        }
+    
+        .section-accordion {
+          display: inline-block;
+          width: 100%;
+          vertical-align: top;
+          margin-left: 50%;
+  
+          .section-accordion-title {
+            margin-bottom: 50px;
+    
+            .col-back-icon {
+              font-size: 24px;
+              cursor: pointer;
+            }
+    
+            .col-back-title {}
+          }
+        }
       }
     }
   }
@@ -127,6 +175,22 @@
         flex: auto;
         max-width: fit-content;
       }
+
+      .section-list {
+        .section-list-element {
+          .col-title {
+            padding: 15px;
+
+            h4 {
+              font-size: 16px;
+            }
+          }
+
+          .col-icon {
+            font-size: 20px;
+          }
+        }
+      }
     }
   }
 }
@@ -151,44 +215,6 @@
           font-size: 80px;
         }
       }
-    }
-  }
-}
-
-.bar {
-  list-style: none;
-  text-align: center;
-
-  li {
-    position: relative;
-    display: inline-block;
-
-    width: 200px;
-
-    &:before {
-      content: '\25CF';
-      margin-right: 10px;
-      font-size: 50px;
-
-      cursor: pointer;
-    }
-    &:after {
-      position: absolute;
-      left: 0;
-      top: 50%;
-      content: '';
-      border-top: 10px solid black;
-      margin-left: 5px;
-      margin-top: 2px;
-      width: 100%;
-    }
-    &:first-of-type:after {
-      //left: 35%;//for 100px
-      left: 45%;//for 200px
-    }
-    &:last-of-type:after {
-      //left: -65%;//for 100px
-      left: -55%;//for 100px
     }
   }
 }
