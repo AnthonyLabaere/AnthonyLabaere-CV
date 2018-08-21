@@ -64,7 +64,7 @@
           </div>
         </div>
 
-        <accordion>
+        <accordion [closeOthers]="true">
           <accordion-group heading="{{'experiences.body.experiencePanel.context.title' | translate}}" [isOpen]="true">
             <div *ngFor="let contextRow of selectedExperience?.context">{{contextRow}}</div>
           </accordion-group>

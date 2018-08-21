@@ -2,3 +2,24 @@
 body {
   margin: 0;
 }
+
+/* Quelques transformations de style de l'accordion ngx-bootstrap */
+.panel .panel-heading {
+  cursor: pointer;
+}
+
+.panel .panel-heading .btn-link {
+  color: black;
+  font-weight: bold;
+}
+.panel .panel-heading .btn-link:hover {
+  text-decoration: none;
+}
+
+.panel.panel-open .panel-heading {
+  /* background-color: lightgray; */
+  background-color: lightskyblue;
+}
+.panel.panel-open .panel-heading .btn-link {
+  /* color: lightskyblue; */
+}

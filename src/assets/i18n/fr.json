@@ -44,10 +44,10 @@
           "separator": " à "
         },
         "context": {
-          "title": "Contexte :"
+          "title": "Contexte"
         },
         "activity": {
-          "title": "Activité",
+          "title": "Activités",
           "type": {
             "suffix": " : "
           }

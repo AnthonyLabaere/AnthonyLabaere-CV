@@ -12,7 +12,7 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 4).set('year', 2012).toDate(),
         moment().set('date', 1).set('month', 11).set('year', 2012).toDate(),
-        'Stagiaire Ingénieur Sopra Group en césure pour DGDDI',
+        'Stagiaire Ingénieur Sopra Group en césure pour CNAMTS',
         [
           'Intégration au sein d\'une équipe chez SOPRA GROUP.'
         ],
