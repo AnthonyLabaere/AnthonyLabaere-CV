@@ -46,7 +46,11 @@ export class HomeComponent implements OnInit {
       this.periodSeparator = res;
     });
 
-    this.experiences = this.homeService.getExperiences();
+    this.experiences = this.homeService.getExperiences().sort((experience1, experience2) => {
+      if (experience1.startDate > experience2.startDate) return -1;
+      if (experience1.startDate < experience2.startDate) return 1;
+      return 0;
+    });
   }
 
   getExperiencePeriod(experience: Experience): string {

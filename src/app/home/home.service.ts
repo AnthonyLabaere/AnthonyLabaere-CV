@@ -13,6 +13,7 @@ export class HomeService {
         moment().set('date', 1).set('month', 4).set('year', 2012).toDate(),
         moment().set('date', 1).set('month', 11).set('year', 2012).toDate(),
         'Stagiaire Ingénieur Sopra Group en césure pour CNAMTS',
+        'CNAMTS',
         [
           'Intégration au sein d\'une équipe chez SOPRA GROUP.'
         ],
@@ -34,6 +35,7 @@ export class HomeService {
         moment().set('date', 1).set('month', 0).set('year', 2013).toDate(),
         moment().set('date', 1).set('month', 3).set('year', 2013).toDate(),
         'Stagiaire Ingénieur Sopra Group en césure pour DGDDI',
+        'DGDDI',
         [
           'Intégration au sein d\'une équipe chez SOPRA GROUP.'
         ],
@@ -52,6 +54,7 @@ export class HomeService {
         moment().set('date', 1).set('month', 4).set('year', 2013).toDate(),
         moment().set('date', 1).set('month', 7).set('year', 2013).toDate(),
         'Stagiaire Ingénieur LERO en césure',
+        'LERO',
         [
           'Réalisation, à 5 stagiaires, d’un démonstrateur de projets de recherche sous la forme d’un gestionnaire de trafic à Dublin.'
         ],
@@ -70,6 +73,7 @@ export class HomeService {
         moment().set('date', 1).set('month', 3).set('year', 2014).toDate(),
         moment().set('date', 1).set('month', 8).set('year', 2014).toDate(),
         'Stagiaire Ingénieur EUROGICIEL',
+        'EUROGICIEL',
         [
           'Gestion et maintenance d’une application de suivi de carrière des cadres dirigeants.',
           'Mission secondaire (moins un jour par mois).',
@@ -92,6 +96,7 @@ export class HomeService {
         moment().set('date', 1).set('month', 10).set('year', 2014).toDate(),
         moment().set('date', 1).set('month', 10).set('year', 2016).toDate(),
         'Ingénieur chez SOLENT SAS pour la FNCA',
+        'FNCA',
         [
           'Gestion et maintenance d’une application de suivi de carrière des cadres dirigeants.',
           'Mission secondaire (moins un jour par mois).',
@@ -118,6 +123,7 @@ export class HomeService {
         moment().set('date', 1).set('month', 1).set('year', 2015).toDate(),
         moment().set('date', 1).set('month', 7).set('year', 2018).toDate(),
         'Ingénieur chez SOLENT SAS pour KENZO',
+        'KENZO',
         [
           'Gestion d’un parc applicatif pour le client KENZO. Développement et maintenance d’applications web.',
           'Travaux réalisés seuls jusqu’à Août 2017, puis en équipe de 2 personnes. ' +
@@ -159,6 +165,7 @@ export class HomeService {
         moment().set('date', 1).set('month', 7).set('year', 2017).toDate(),
         moment().set('date', 1).set('month', 7).set('year', 2018).toDate(),
         'Ingénieur chez SOLENT SAS pour VULCAIN INGÉNIERIE',
+        'VULCAIN INGÉNIERIE',
         [
           'Réalisation d’une application de gestion des comptes rendus d’activités.',
           'Mission à 50% sur une équipe de 4 personnes, en méthodologie Agile (SCRUM).'
@@ -181,6 +188,7 @@ export class HomeService {
         moment().set('date', 1).set('month', 0).set('year', 2018).toDate(),
         moment().set('date', 1).set('month', 7).set('year', 2018).toDate(),
         'Ingénieur chez SOLENT SAS',
+        'SOLENT SAS',
         [
           'Réalisation, dans le cadre d’un challenge innovation, d’une tourelle robot permettant d’identifier des cibles et de les suivre.',
           'Équipe de 4 personnes (avec 20 jours sur l’année) plus 1 stagiaire en fin d’étude à plein temps sur le projet.'
