@@ -1,16 +1,17 @@
 export class Experience {
   startDate: Date;
   endDate: Date;
-  sumUp: string;
+  summary: string;
   customer: string;
   context: string[];
   activities: Activity[];
   environment: Environment;
 
-  constructor(startDate: Date, endDate: Date, sumUp: string, customer: string, context: string[], activities: Activity[], environment: Environment) {
+  constructor(startDate: Date, endDate: Date, summary: string, customer: string,
+              context: string[], activities: Activity[], environment: Environment) {
     this.startDate = startDate;
     this.endDate = endDate;
-    this.sumUp = sumUp;
+    this.summary = summary;
     this.customer = customer;
     this.context = context;
     this.activities = activities;

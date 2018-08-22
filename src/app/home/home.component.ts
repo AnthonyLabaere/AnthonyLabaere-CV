@@ -1,11 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
+import {animate, AnimationEvent, state, style, transition, trigger} from '@angular/animations';
 
 import {HomeService} from './home.service';
 import {Experience} from '../entities';
@@ -21,12 +15,12 @@ import {TranslateService} from '@ngx-translate/core';
       state('list', style({transform: 'translateX(0)'})),
       transition('list => accordion', [
         style({transform: 'translateX(0)'}),
-        animate('1000ms ease-out')
+        animate('250ms ease-out')
       ]),
       state('accordion', style({transform: 'translateX(-150%)'})),
       transition('accordion => list', [
         style({transform: 'translateX(-150%)'}),
-        animate('1000ms ease-out')
+        animate('250ms ease-out')
       ])
     ])
   ]
@@ -37,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   public experiences: Experience[];
   public selectedExperience: Experience;
-  public experiencesContainerState = "list";
+  public experiencesContainerState = 'list';
 
   constructor(private homeService: HomeService, private commonService: CommonService, private translateService: TranslateService) { }
 
@@ -47,8 +41,8 @@ export class HomeComponent implements OnInit {
     });
 
     this.experiences = this.homeService.getExperiences().sort((experience1, experience2) => {
-      if (experience1.startDate > experience2.startDate) return -1;
-      if (experience1.startDate < experience2.startDate) return 1;
+      if (experience1.startDate > experience2.startDate) { return -1; }
+      if (experience1.startDate < experience2.startDate) { return 1; }
       return 0;
     });
   }

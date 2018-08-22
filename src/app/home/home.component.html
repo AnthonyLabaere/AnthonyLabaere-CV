@@ -41,13 +41,14 @@
 
   <section id="experiences"  class="home-section home-section-white">
     <div class="section-title" [translate]="'experiences.title'"></div>
-    <div class="container section-container section-list-container" [@containerListAccordion]="experiencesContainerState">
+    <div class="container section-container section-list-container"
+         [@containerListAccordion]="experiencesContainerState">
 
       <div class="section-list">
-        <div class="row section-list-element" *ngFor="let experience of experiences" 
+        <div class="row section-list-element" *ngFor="let experience of experiences"
           (click)="experiencesContainerState = 'accordion'; selectedExperience = experience">
           <div class="col col-10 col-title">
-            <h4>{{getExperiencePeriod(experience)}} - {{experience.customer}}</h4>
+            <h4 title="{{getExperiencePeriod(experience)}} - {{experience.customer}}">{{getExperiencePeriod(experience)}} - {{experience.customer}}</h4>
           </div>
           <div class="col col-2 col-icon">
             <i class="fa fa-chevron-right"></i>
@@ -57,11 +58,12 @@
 
       <div class="section-accordion">
         <div class="row section-accordion-title">
-          <div class="col col-1 col-back-icon" (click)="experiencesContainerState = 'list'; selectedExperience = undefined">
+          <div class="col col-1 col-back-icon" (click)="experiencesContainerState = 'list'">
             <i class="fa fa-arrow-left"></i>
           </div>
           <div class="col col-10 col-title">
-            <h2 class="text-center">{{selectedExperience?.customer}}</h2>
+            <h3 class="text-center">{{selectedExperience?.customer}}</h3>
+            <!--<h3 class="text-center">{{selectedExperience?.summary}}</h2>-->
           </div>
         </div>
 

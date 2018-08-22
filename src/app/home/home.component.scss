@@ -81,54 +81,66 @@
       margin-bottom: 100px;
 
       &.section-list-container {
-
         white-space: nowrap;
         float:none;
         clear: both;
-  
+        padding-left: 0;
+        padding-right: 0;
+
         .section-list {
           display: inline-block;
           width: 100%;
-  
+          padding-left: 15px;
+          padding-right: 15px;
+
           .section-list-element {
             cursor: pointer;
             border-bottom: 1px solid lightskyblue;
-    
+
             .col-title {
               padding: 25px;
-    
+
               h4 {
+                overflow: hidden;
+                text-overflow: ellipsis;
                 margin: auto;
               }
             }
-    
+
             .col-icon {
               text-align: right;
               margin: auto;
               font-size: 25px;
             }
           }
-    
+
           .section-list-element:hover {
             background-color: lightgray;
           }
         }
-    
+
         .section-accordion {
           display: inline-block;
           width: 100%;
           vertical-align: top;
           margin-left: 50%;
-  
+          padding-left: 15px;
+          padding-right: 15px;
+
           .section-accordion-title {
             margin-bottom: 50px;
-    
+
             .col-back-icon {
               font-size: 24px;
               cursor: pointer;
             }
-    
-            .col-back-title {}
+
+            .col-title {
+              margin: auto 0;
+              h3 {
+                margin-bottom: 0;
+              }
+            }
           }
         }
       }
@@ -176,18 +188,39 @@
         max-width: fit-content;
       }
 
-      .section-list {
-        .section-list-element {
-          .col-title {
-            padding: 15px;
 
-            h4 {
-              font-size: 16px;
+      .section-container {
+        &.section-list-container {
+          .section-list {
+            .section-list-element {
+              .col-title {
+                padding: 15px;
+
+                h4 {
+                  font-size: 16px;
+                }
+              }
+
+              .col-icon {
+                font-size: 20px;
+              }
             }
           }
 
-          .col-icon {
-            font-size: 20px;
+          .section-accordion {
+            .section-accordion-title {
+              margin-bottom: 25px;
+
+              .col-back-icon {
+                font-size: 18px;
+              }
+
+              .col-title {
+                h3 {
+                  font-size: 18px;
+                }
+              }
+            }
           }
         }
       }

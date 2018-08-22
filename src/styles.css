@@ -11,15 +11,19 @@ body {
 .panel .panel-heading .btn-link {
   color: black;
   font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
 }
 .panel .panel-heading .btn-link:hover {
   text-decoration: none;
 }
 
 .panel.panel-open .panel-heading {
-  /* background-color: lightgray; */
   background-color: lightskyblue;
 }
-.panel.panel-open .panel-heading .btn-link {
-  /* color: lightskyblue; */
+
+@media (max-width: 576px) {
+  .panel .panel-heading .btn-link {
+    font-size: 16px;
+  }
 }
