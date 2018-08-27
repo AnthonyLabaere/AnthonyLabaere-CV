@@ -42,7 +42,7 @@
   <section id="experiences"  class="home-section home-section-white">
     <div class="section-title" [translate]="'experiences.title'"></div>
     <div class="container section-container section-list-container"
-         [@containerListAccordion]="experiencesContainerState">
+         [@containerListAccordion]="experiencesContainerState" (@containerListAccordion.done)="containerListAccordionAnimationDone($event)">
 
       <div class="section-list">
         <div class="row section-list-element" *ngFor="let experience of experiences"
@@ -65,7 +65,7 @@
 
       <div class="section-accordion">
         <div class="row section-accordion-title">
-          <div class="col col-1 col-back-icon" (click)="experiencesContainerState = 'list'">
+          <div class="col col-1 col-back-icon" (click)="onBackToExperiencesListClick()">
             <i class="fa fa-arrow-left"></i>
           </div>
           <div class="col col-10 col-title">
@@ -75,14 +75,15 @@
         </div>
 
         <accordion [closeOthers]="true">
-          <accordion-group heading="{{'experiences.body.experiencePanel.context.title' | translate}}" [isOpen]="true">
+          <accordion-group heading="{{'experiences.body.experiencePanel.context.title' | translate}}" [isOpen]="isContextOpen">
             <div>
               <ul>
                 <li *ngFor="let contextRow of selectedExperience?.context">{{contextRow}}</li>
               </ul>
             </div>
           </accordion-group>
-          <accordion-group heading="{{'experiences.body.experiencePanel.activity.title' | translate}}">
+          <accordion-group heading="{{'experiences.body.experiencePanel.activity.title' | translate}}" 
+            [isOpen]="isActivitiesOpen">
             <div *ngFor="let activity of selectedExperience?.activities">
               <h5>{{'activityType.' + activity.type | translate}}{{'experiences.body.experiencePanel.activity.type.suffix' | translate}}</h5>
               <ul>
@@ -97,7 +98,7 @@
               </ul>
             </div>
           </accordion-group>
-          <accordion-group heading="{{'experiences.body.experiencePanel.environment.title' | translate}}">
+          <accordion-group heading="{{'experiences.body.experiencePanel.environment.title' | translate}}" [isOpen]="isEnvironmentOpen">
             <div>
               <span style="text-decoration: underline;" [translate]="'experiences.body.experiencePanel.environment.ide.title'"></span>
               <span [translate]="'experiences.body.experiencePanel.environment.ide.suffix'"></span>

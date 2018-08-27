@@ -12,13 +12,13 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./home.component.scss'],
   animations: [
     trigger('containerListAccordion', [
-      state('list', style({transform: 'translateX(0)'})),
-      transition('list => accordion', [
+      state(HomeComponent.EXPERIENCES_CONTAINER_LIST_STATE, style({transform: 'translateX(0)'})),
+      transition(HomeComponent.EXPERIENCES_CONTAINER_LIST_STATE + ' => ' + HomeComponent.EXPERIENCES_CONTAINER_ACCORDION_STATE, [
         style({transform: 'translateX(0)'}),
         animate('250ms ease-out')
       ]),
-      state('accordion', style({transform: 'translateX(-150%)'})),
-      transition('accordion => list', [
+      state(HomeComponent.EXPERIENCES_CONTAINER_ACCORDION_STATE, style({transform: 'translateX(-150%)'})),
+      transition(HomeComponent.EXPERIENCES_CONTAINER_ACCORDION_STATE + ' => ' + HomeComponent.EXPERIENCES_CONTAINER_LIST_STATE, [
         style({transform: 'translateX(-150%)'}),
         animate('250ms ease-out')
       ])
@@ -27,11 +27,17 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class HomeComponent implements OnInit {
 
+  public static EXPERIENCES_CONTAINER_LIST_STATE = 'list';
+  public static EXPERIENCES_CONTAINER_ACCORDION_STATE = 'accordion';
+
   private periodSeparator: string;
 
   public experiences: Experience[];
   public selectedExperience: Experience;
-  public experiencesContainerState = 'list';
+  public experiencesContainerState = HomeComponent.EXPERIENCES_CONTAINER_LIST_STATE;
+  public isContextOpen = true;
+  public isActivitiesOpen = false;
+  public isEnvironmentOpen = false;
 
   constructor(private homeService: HomeService, private commonService: CommonService, private translateService: TranslateService) { }
 
@@ -49,5 +55,17 @@ export class HomeComponent implements OnInit {
 
   getExperiencePeriod(experience: Experience): string {
     return experience.getPeriod(this.periodSeparator);
+  }
+  
+  onBackToExperiencesListClick() {
+    this.experiencesContainerState = HomeComponent.EXPERIENCES_CONTAINER_LIST_STATE;
+  }
+
+  containerListAccordionAnimationDone(event: AnimationEvent) {
+    if (event.toState === HomeComponent.EXPERIENCES_CONTAINER_LIST_STATE) {
+      this.isContextOpen = true;
+      this.isActivitiesOpen = false;
+      this.isEnvironmentOpen = false;
+    }
   }
 }
