@@ -20,15 +20,16 @@ body {
   background-color: lightskyblue;
 }
 
+.panel.panel-open .panel-body > * {
+  white-space: normal;
+}
+
 @media (max-width: 576px) {
   .panel.panel-open .panel-body h5 {
     font-size: 16px;
-    white-space: normal;
   }
 
   .panel.panel-open .panel-body div {
     font-size: 14px;
-    white-space: normal;
   }
-
 }
