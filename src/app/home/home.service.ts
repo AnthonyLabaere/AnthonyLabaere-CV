@@ -127,7 +127,7 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 10).set('year', 2014).toDate(),
         moment().set('date', 1).set('month', 10).set('year', 2016).toDate(),
-        'Ingénieur chez SOLENT SAS',
+        'Ingénieur chez SOLENT',
         'FNCA',
         [
           'Gestion et maintenance d’une application de suivi de carrière des cadres dirigeants.',
@@ -154,7 +154,7 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 1).set('year', 2015).toDate(),
         moment().set('date', 1).set('month', 7).set('year', 2018).toDate(),
-        'Ingénieur chez SOLENT SAS',
+        'Ingénieur chez SOLENT',
         'KENZO',
         [
           'Gestion d’un parc applicatif pour le client KENZO.',
@@ -198,8 +198,8 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 7).set('year', 2017).toDate(),
         moment().set('date', 1).set('month', 7).set('year', 2018).toDate(),
-        'Ingénieur chez SOLENT SAS',
-        'VULCAIN INGÉNIERIE',
+        'Ingénieur chez SOLENT',
+        'VULCAIN',
         [
           'Réalisation d’une application de gestion des comptes rendus d’activités.',
           'Mission à 50% sur une équipe de 4 personnes, en méthodologie Agile (SCRUM).'
@@ -221,8 +221,8 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 0).set('year', 2018).toDate(),
         moment().set('date', 1).set('month', 7).set('year', 2018).toDate(),
-        'Ingénieur chez SOLENT SAS',
-        'SOLENT SAS',
+        'Ingénieur chez SOLENT',
+        'SOLENT',
         [
           'Réalisation, dans le cadre d’un challenge innovation, d’une tourelle robot permettant d’identifier des cibles et de les suivre.',
           'Équipe de 4 personnes (avec 20 jours sur l’année) plus 1 stagiaire en fin d’étude à plein temps sur le projet.'
@@ -250,7 +250,8 @@ export class HomeService {
 
     skills.push(
       new Skill('Java', 8, HomeService.SKILL_JAVA_THEME),
-      new Skill('Spring (Boot)', 7, HomeService.SKILL_JAVA_THEME),
+      new Skill('Spring', 7, HomeService.SKILL_JAVA_THEME),
+      new Skill('Spring Boot', 7, HomeService.SKILL_JAVA_THEME),
       new Skill('Hibernate', 8, HomeService.SKILL_JAVA_THEME),
       new Skill('Maven', 6, HomeService.SKILL_JAVA_THEME),
       new Skill('Javascript', 8, HomeService.SKILL_JS_THEME),

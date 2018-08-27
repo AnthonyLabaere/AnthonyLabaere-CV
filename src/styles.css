@@ -8,6 +8,9 @@ body {
     font-size: 18px;
   }
   h4 {
+    font-size: 14px;
+  }
+  h5 {
     font-size: 12px;
   }
 }
@@ -66,7 +69,7 @@ body {
   background-color: powderblue;
 }
 .progress-bar-8 bar {
-  background-color: cyan;
+  background-color: deepskyblue;
 }
 .progress-bar-9 bar {
   background-color: darkcyan;

@@ -131,8 +131,10 @@
           
           <div class="card mx-2 mb-3" *ngFor="let skill of skills">
             <div class="card-body">
-              <h5 class="card-title">{{skill.title}}</h5>
-              <p class="card-text"><progressbar class="{{'progress-bar-' + skill.theme}}" [value]="10 * skill.level"></progressbar></p>
+              <h4 class="card-title">{{skill.title}}</h4>
+              <p class="card-text">
+                <progressbar class="{{'progress-bar-' + skill.theme}}" [value]="10 * skill.level"></progressbar>
+              </p>
             </div>
           </div>
           

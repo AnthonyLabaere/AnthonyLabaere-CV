@@ -161,6 +161,12 @@
       .card {
         width: 175px;
         text-align: center;
+        transition: transform 0.15s;
+        transition-timing-function: ease-in;
+      }
+
+      .card:hover {
+        transform: scale(1.1, 1.1);
       }
     }
   }
@@ -229,6 +235,12 @@
               }
             }
           }
+        }
+      }
+      
+      .section-cards {
+        .card {
+          width: 135px;
         }
       }
     }
