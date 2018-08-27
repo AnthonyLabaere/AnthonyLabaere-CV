@@ -121,14 +121,8 @@
   <section id="skills" class="home-section home-section-black">
     <div class="section-title" [translate]="'skills.title'"></div>
     <div class="container section-container">
-      <div class="section-cards">
+      <div class="section-cards without-pictures">
         <div class="row mt-5 justify-content-center">
-          <!-- <div class="card card-custom mx-2 mb-3">
-            <a href="https://www.netflix.com/fr/">
-              <img src="https://cdn1.iconfinder.com/data/icons/metro-ui-dock-icon-set--icons-by-dakirby/256/Netflix.png" alt="" class="card-img">
-            </a>
-          </div> -->
-          
           <div class="card mx-2 mb-3" *ngFor="let skill of skills">
             <div class="card-body">
               <h4 class="card-title">{{skill.title}}</h4>
@@ -145,6 +139,18 @@
 
   <section id="leisure" class="home-section home-section-white">
     <div class="section-title" [translate]="'leisure.title'"></div>
+    <div class="container section-container">
+      <div class="section-cards with-pictures">
+        <div class="card-deck">
+          <div class="card" *ngFor="let leisure of leisures">
+            <img class="card-img-top" src="assets/images/{{leisure.image.fileName}}" alt="{{leisure.image.description}}" />
+            <div class="card-body text-center">
+              <h4 class="card-title">{{leisure.title}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </div>
 

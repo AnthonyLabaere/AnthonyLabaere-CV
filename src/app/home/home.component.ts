@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {animate, AnimationEvent, state, style, transition, trigger} from '@angular/animations';
 
 import {HomeService} from './home.service';
-import {Experience, Formation, Skill} from '../entities';
+import {Experience, Formation, Skill, Leisure} from '../entities';
 import {CommonService} from '../_services/common.service';
 import {TranslateService} from '@ngx-translate/core';
 
@@ -43,6 +43,8 @@ export class HomeComponent implements OnInit {
 
   public skills: Skill[];
 
+  public leisures: Leisure[];
+
   constructor(private homeService: HomeService, private commonService: CommonService, private translateService: TranslateService) { }
 
   ngOnInit() {
@@ -63,6 +65,8 @@ export class HomeComponent implements OnInit {
     });
 
     this.skills = this.homeService.getSkills();
+
+    this.leisures = this.homeService.getLeisures();
   }
 
   getFormationPeriod(formation: Formation): string {

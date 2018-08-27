@@ -1,11 +1,11 @@
 export class Formation {
-  logo: FormationLogo;
+  logo: Image;
   startDate: Date;
   endDate: Date;
   place: string;
   description: string;
 
-  constructor(logo: FormationLogo, startDate: Date, endDate: Date, place: string, description: string) {
+  constructor(logo: Image, startDate: Date, endDate: Date, place: string, description: string) {
     this.logo = logo;
     this.startDate = startDate;
     this.endDate = endDate;
@@ -17,7 +17,7 @@ export class Formation {
     return this.startDate.getFullYear() + separator + this.endDate.getFullYear();
   }
 }
-export class FormationLogo {
+export class Image {
   fileName: string;
   description: string;
 
@@ -99,5 +99,15 @@ export class Skill {
     this.title = title;
     this.level = level;
     this.theme = theme;
+  }
+}
+
+export class Leisure {
+  image: Image;
+  title: string;
+  
+  constructor(image: Image, title: string) {
+    this.image = image;
+    this.title = title;
   }
 }

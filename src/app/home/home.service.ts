@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Activity, ActivityType, Environment, Experience, SubActivity, Formation, FormationLogo, Skill} from '../entities';
+import {Activity, ActivityType, Environment, Experience, SubActivity, Formation, Image, Skill, Leisure} from '../entities';
 
 import * as moment from 'moment';
 
@@ -20,14 +20,14 @@ export class HomeService {
     const formations: Formation[] = [];
 
     formations.push(new Formation(
-      new FormationLogo('faidherbe_logo.gif', 'Faidherbe logo'),
+      new Image('faidherbe_logo.gif', 'Faidherbe logo'),
       moment().set('date', 1).set('month', 0).set('year', 2008).toDate(),
       moment().set('date', 1).set('month', 0).set('year', 2010).toDate(),
       'Lycée Faidherbe',
       'CPGE (Classe Préparatoire aux Grandes Écoles) : MPSI et MP*'
     ));
     formations.push(new Formation(
-      new FormationLogo('ecn_logo.png', 'ECN logo'),
+      new Image('ecn_logo.png', 'ECN logo'),
       moment().set('date', 1).set('month', 0).set('year', 2010).toDate(),
       moment().set('date', 1).set('month', 0).set('year', 2014).toDate(),
       'École Centrale Nantes',
@@ -274,9 +274,22 @@ export class HomeService {
       new Skill('Eclipse', 6, HomeService.SKILL_IDE_THEME),
       new Skill('Visual Code', 3, HomeService.SKILL_IDE_THEME),
       new Skill('Axure', 1, HomeService.SKILL_MODELING_THEME),
-      new Skill('Agile', 7, HomeService.SKILL_PROJECT_MANAGEMENT_THEME),
+      new Skill('Agile', 7, HomeService.SKILL_PROJECT_MANAGEMENT_THEME)
     );
 
     return skills;
   }
+
+  public getLeisures(): Leisure[] {
+    let leisures: Leisure[] = [];
+
+    leisures.push(
+      new Leisure(new Image('diy.jpg', 'Bricolage'), 'Bricolage'),
+      new Leisure(new Image('gardening.jpg', 'Jardinage'), 'Jardinage'),
+      new Leisure(new Image('emerging-technologies.jpg', 'Nouvelles technologies'), 'Nouvelles technologies')
+    );
+
+    return leisures;
+  }
+
 }

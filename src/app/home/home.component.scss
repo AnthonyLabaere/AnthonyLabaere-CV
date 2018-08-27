@@ -159,7 +159,6 @@
       color: black;
 
       .card {
-        width: 175px;
         text-align: center;
         transition: transform 0.15s;
         transition-timing-function: ease-in;
@@ -167,6 +166,18 @@
 
       .card:hover {
         transform: scale(1.1, 1.1);
+      }
+
+      &.without-pictures {
+        .card {
+          width: 175px;
+        }
+      }
+
+      &.with-pictures {
+        .card-img-top {
+          height: 450px;
+        }
       }
     }
   }
@@ -237,10 +248,16 @@
           }
         }
       }
-      
+
       .section-cards {
-        .card {
-          width: 135px;
+        .card:hover {
+          transform: none;
+        }
+
+        &.without-pictures {
+          .card {
+            width: 135px;
+          }
         }
       }
     }
