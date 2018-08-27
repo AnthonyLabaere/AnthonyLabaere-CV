@@ -20,21 +20,7 @@
     "body": "D'une formation d'ingénieur généraliste avec une spécialité en informatique, je suis aujourd'hui développeur web full stack dans le monde des systèmes d'information. Aujourd'hui c'est l'aspect fonctionnel qui me passionne, que ce soit au niveau back ou front. Je n'ai pas vocation à devenir expert technique, je souhaite plutôt m'orienter vers la relation client mais aussi la gestion de projet."
   },
   "formation": {
-    "title": "Formation",
-    "body": {
-      "cpge": {
-        "alt": "Faidherbe logo",
-        "date": "2008 - 2010 : ",
-        "place": "Lycée Faidherbe",
-        "description": "CPGE (Classe Préparatoire aux Grandes Écoles) : MPSI et MP*"
-      },
-      "ecn": {
-        "alt": "ECN logo",
-        "date": "2010 - 2014 : ",
-        "place": "École Centrale Nantes",
-        "description": "Ingénieur Généraliste avec spécialité informatique"
-      }
-    }
+    "title": "Formation"
   },
   "experiences": {
     "title": "Expériences",

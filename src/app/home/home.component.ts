@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {animate, AnimationEvent, state, style, transition, trigger} from '@angular/animations';
 
 import {HomeService} from './home.service';
-import {Experience} from '../entities';
+import {Experience, Formation} from '../entities';
 import {CommonService} from '../_services/common.service';
 import {TranslateService} from '@ngx-translate/core';
 
@@ -32,6 +32,8 @@ export class HomeComponent implements OnInit {
 
   private periodSeparator: string;
 
+  public formations: Formation[];
+
   public experiences: Experience[];
   public selectedExperience: Experience;
   public experiencesContainerState = HomeComponent.EXPERIENCES_CONTAINER_LIST_STATE;
@@ -46,11 +48,25 @@ export class HomeComponent implements OnInit {
       this.periodSeparator = res;
     });
 
+    this.formations = this.homeService.getFormations().sort((formation1, formation2) => {
+      if (formation1.startDate > formation2.startDate) { return -1; }
+      if (formation1.startDate < formation2.startDate) { return 1; }
+      return 0;
+    });
+
     this.experiences = this.homeService.getExperiences().sort((experience1, experience2) => {
       if (experience1.startDate > experience2.startDate) { return -1; }
       if (experience1.startDate < experience2.startDate) { return 1; }
       return 0;
     });
+  }
+
+  getFormationPeriod(formation: Formation): string {
+    if (formation) {
+      return formation.getPeriod(this.periodSeparator);
+    } else {
+      return '';
+    }
   }
 
   getExperiencePeriod(experience: Experience): string {

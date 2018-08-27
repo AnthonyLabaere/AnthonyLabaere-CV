@@ -16,26 +16,15 @@
   <section id="formation" class="home-section home-section-black">
     <div class="section-title" [translate]="'formation.title'"></div>
     <div class="container section-container">
-      <!--TODO : construire un objet formation comme Experience-->
-      <div class="row section-image-container">
-        <div class="col-4 section-image">
-          <img src="assets/images/faidherbe_logo.gif" alt="{{'formation.body.cpge.alt' | translate}}" />
+      <div class="row section-image-container" *ngFor="let formation of formations">
+          <div class="col-4 section-image">
+            <img src="assets/images/{{formation.logo.fileName}}" alt="{{formation.logo.description}}" />
+          </div>
+          <div class="col-8 section-text">
+            <div class="section-text-title"><span>{{getFormationPeriod(formation)}} : </span><span>{{formation.place}}</span></div>
+            <div>{{formation.description}}</div>
+          </div>
         </div>
-        <div class="col-8 section-text">
-          <div class="section-text-title"><span [translate]="'formation.body.cpge.date'"></span><span [translate]="'formation.body.cpge.place'"></span></div>
-          <div [translate]="'formation.body.cpge.description'"></div>
-        </div>
-      </div>
-
-      <div class="row section-image-container">
-        <div class="col-4 section-image">
-          <img src="assets/images/ecn_logo.png" alt="{{'formation.body.ecn.alt' | translate}}" />
-        </div>
-        <div class="col-8 section-text">
-          <div class="section-text-title"><span [translate]="'formation.body.ecn.date'"></span><span [translate]="'formation.body.ecn.place'"></span></div>
-          <div [translate]="'formation.body.ecn.description'"></div>
-        </div>
-      </div>
     </div>
   </section>
 

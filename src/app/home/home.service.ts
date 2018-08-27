@@ -1,10 +1,31 @@
 import {Injectable} from '@angular/core';
-import {Activity, ActivityType, Environment, Experience, SubActivity} from '../entities';
+import {Activity, ActivityType, Environment, Experience, SubActivity, Formation, FormationLogo} from '../entities';
 
 import * as moment from 'moment';
 
 @Injectable()
 export class HomeService {
+  public getFormations(): Formation[] {
+    const formations = [];
+
+    formations.push(new Formation(
+      new FormationLogo('faidherbe_logo.gif', 'Faidherbe logo'),
+      moment().set('date', 1).set('month', 0).set('year', 2008).toDate(),
+      moment().set('date', 1).set('month', 0).set('year', 2010).toDate(),
+      'Lycée Faidherbe',
+      'CPGE (Classe Préparatoire aux Grandes Écoles) : MPSI et MP*'
+    ));
+    formations.push(new Formation(
+      new FormationLogo('ecn_logo.png', 'ECN logo'),
+      moment().set('date', 1).set('month', 0).set('year', 2010).toDate(),
+      moment().set('date', 1).set('month', 0).set('year', 2014).toDate(),
+      'École Centrale Nantes',
+      'Ingénieur Généraliste avec spécialité informatique'
+    ));
+
+    return formations;
+  }
+
   public getExperiences(): Experience[] {
     const experiences = [];
 

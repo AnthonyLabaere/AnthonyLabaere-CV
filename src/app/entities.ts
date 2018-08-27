@@ -1,3 +1,32 @@
+export class Formation {
+  logo: FormationLogo;
+  startDate: Date;
+  endDate: Date;
+  place: string;
+  description: string;
+
+  constructor(logo: FormationLogo, startDate: Date, endDate: Date, place: string, description: string) {
+    this.logo = logo;
+    this.startDate = startDate;
+    this.endDate = endDate;
+    this.place = place;
+    this.description = description;
+  }
+
+  public getPeriod(separator: string): string {
+    return this.startDate.getFullYear() + separator + this.endDate.getFullYear();
+  }
+}
+export class FormationLogo {
+  fileName: string;
+  description: string;
+
+  constructor(fileName: string, description: string) {
+    this.fileName = fileName;
+    this.description = fileName;
+  }
+}
+
 export class Experience {
   startDate: Date;
   endDate: Date;
