@@ -3,6 +3,15 @@ body {
   margin: 0;
 }
 
+@media (max-width: 576px) {
+  h3 {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 12px;
+  }
+}
+
 /* Quelques transformations de style de l'accordion ngx-bootstrap */
 .panel .panel-heading {
   cursor: pointer;
