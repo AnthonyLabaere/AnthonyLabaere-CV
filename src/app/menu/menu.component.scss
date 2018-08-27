@@ -1,49 +1,64 @@
-#app-menu {
+.app-menu-container {
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  right: 50px;
   color: lightgrey;
+  overflow: hidden;
 
-  #menu-icon {
-    z-index: 1;
-    position: absolute;
+  .app-menu {
+    transform: translate(90%);
+    transition: transform 0.5s;
+    transition-timing-function: ease-in;
 
-    top: 10px;
-    right: 50px;
-
-    i {
-      font-size: 50px;
-      cursor: pointer;
+    .menu-icon {
+      z-index: 1;
+      display: inline-block;
+  
+      i {
+        cursor: pointer;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in;
+        font-size: 50px;
+      }
     }
-  }
-
-  #menu-panel {
-    z-index: 1;
-    background-color: lightgrey;
-    border-radius: 10px;
-    position: absolute;
-    top: 75px;
-    right: 50px;
-    padding: 10px 0;
-
-    a {
-      display: block;
-      padding: 10px 40px;
-      color: black;
+    .menu-panel {
+      z-index: 1;
+      display: inline-block;
+      vertical-align: top;
+      padding: 12px 25px 12px 25px;
+      
+      a {
+        // background-color: red;
+        padding: 10px;
+        color: lightgrey;
+      }
+      a:hover {
+        text-decoration: none;
+        color: black;
+        background-color: lightblue;
+      }
     }
-
-    a:hover {
-      text-decoration: none;
-      background-color: lightskyblue;
+  
+    &.menu-displayed {
+      transform: translate(0);
+      .menu-icon {
+        i {
+          transform: rotate(-90deg);
+        }
+      }
     }
   }
 }
 
-@media (max-width: 576px) {
-  #app-menu {
-    #menu-icon {
-      right: 20px;
-    }
+// @media (max-width: 576px) {
+//   #app-menu {
+//     #menu-icon {
+//       right: 20px;
+//     }
 
-    #menu-panel {
-      right: 20px;
-    }
-  }
-}
+//     #menu-panel {
+//       right: 20px;
+//     }
+//   }
+// }

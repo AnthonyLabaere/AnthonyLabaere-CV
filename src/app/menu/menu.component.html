@@ -1,12 +1,15 @@
-<div id="app-menu">
-  <div id="menu-icon" (click)="showMenu=!showMenu">
-      <i class="fa fa-bars"></i>
-  </div>
-  <div id="menu-panel" [hidden]="!showMenu" (click)="showMenu=false">
-    <a [routerLink]="['/']" fragment="about-me" [translate]="'menu.about-me'"></a>
-    <a [routerLink]="['/']" fragment="formation" [translate]="'menu.formation'"></a>
-    <a [routerLink]="['/']" fragment="experiences" [translate]="'menu.experiences'"></a>
-    <a [routerLink]="['/']" fragment="competences" [translate]="'menu.competences'"></a>
-    <a [routerLink]="['/']" fragment="leisure" [translate]="'menu.leisure'"></a>
-  </div>
+<div class="app-menu-container">
+    <div class="app-menu" [ngClass]="{'menu-displayed': showMenu}">
+      <div class="menu-icon" (click)="showMenu = !showMenu">
+          <i class="fa fa-bars"></i>
+      </div>
+      <!-- <div class="menu-panel" [hidden]="!showMenu" (click)="showMenu=false"> -->
+      <div class="menu-panel" (click)="showMenu=false">
+        <a class="mr-2" [routerLink]="['/']" fragment="about-me" [translate]="'menu.about-me'"></a>
+        <a class="mr-2 ml-2" [routerLink]="['/']" fragment="formation" [translate]="'menu.formation'"></a>
+        <a class="mr-2 ml-2" [routerLink]="['/']" fragment="experiences" [translate]="'menu.experiences'"></a>
+        <a class="mr-2 ml-2" [routerLink]="['/']" fragment="competences" [translate]="'menu.competences'"></a>
+        <a class="ml-2" [routerLink]="['/']" fragment="leisure" [translate]="'menu.leisure'"></a>
+      </div>
+    </div>
 </div>
