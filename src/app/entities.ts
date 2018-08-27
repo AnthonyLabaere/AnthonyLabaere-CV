@@ -31,11 +31,21 @@ export enum ActivityType {
 
 export class Activity {
   type: ActivityType;
-  list: string[];
+  list: SubActivity[];
 
-  constructor(type: ActivityType, list: string[]) {
+  constructor(type: ActivityType, list: SubActivity[]) {
     this.type = type;
     this.list = list;
+  }
+}
+
+export class SubActivity {
+  title: string;
+  children: SubActivity[];
+
+  constructor(title: string, children?: SubActivity[]) {
+    this.title = title;
+    this.children = children;
   }
 }
 

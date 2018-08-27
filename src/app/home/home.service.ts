@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Activity, ActivityType, Environment, Experience} from '../entities';
+import {Activity, ActivityType, Environment, Experience, SubActivity} from '../entities';
 
 import * as moment from 'moment';
 
@@ -18,11 +18,11 @@ export class HomeService {
           'Intégration au sein d\'une équipe chez SOPRA GROUP.'
         ],
         [
-          new Activity(ActivityType.DEVELOPMENT, [,
-            'Développement/Qualification de corrections d’anomalies, de petites et moyennes évolutions ' +
-              '(documentation technique, scripts, restitution Business Object).',
-            'Développement d’une grande évolution pendant deux mois et demi en binôme ' +
-              '(spécifications techniques, scripts shell et PLSQL, univers et rapports BO, documentation).'
+          new Activity(ActivityType.DEVELOPMENT, [
+            new SubActivity('Développement/Qualification de corrections d’anomalies, de petites et moyennes évolutions ' +
+              '(documentation technique, scripts, restitution Business Object).'),
+              new SubActivity('Développement d’une grande évolution pendant deux mois et demi en binôme ' +
+              '(spécifications techniques, scripts shell et PLSQL, univers et rapports BO, documentation).')
           ])
         ],
         new Environment(
@@ -40,8 +40,8 @@ export class HomeService {
           'Intégration au sein d\'une équipe chez SOPRA GROUP.'
         ],
         [
-          new Activity(ActivityType.DEVELOPMENT, [,
-            'Développement de batchs, de webServices, d’IHM.'
+          new Activity(ActivityType.DEVELOPMENT, [
+            new SubActivity('Développement de batchs, de webServices, d’IHM.')
           ])
         ],
         new Environment(
@@ -59,8 +59,8 @@ export class HomeService {
           'Réalisation, à 5 stagiaires, d’un démonstrateur de projets de recherche sous la forme d’un gestionnaire de trafic à Dublin.'
         ],
         [
-          new Activity(ActivityType.DEVELOPMENT, [,
-            'Développement de différentes fonctionnalités.'
+          new Activity(ActivityType.DEVELOPMENT, [
+            new SubActivity('Développement de différentes fonctionnalités.')
           ])
         ],
         new Environment(
@@ -80,10 +80,10 @@ export class HomeService {
           'Travaux réalisés seul.'
         ],
         [
-          new Activity(ActivityType.DEVELOPMENT, [,
-            'Rédaction de documentations fonctionnelles et techniques.',
-            'Développement back-end de patchs, jobs et web scripts.',
-            'Développement front-end de pages, sites et templates.'
+          new Activity(ActivityType.DEVELOPMENT, [
+            new SubActivity('Rédaction de documentations fonctionnelles et techniques.'),
+            new SubActivity('Développement back-end de patchs, jobs et web scripts.'),
+            new SubActivity('Développement front-end de pages, sites et templates.')
           ])
         ],
         new Environment(
@@ -104,13 +104,13 @@ export class HomeService {
         ],
         [
           new Activity(ActivityType.PROJECT_MANAGEMENT, [
-            'Réalisation de chiffrages pour le développement des nouvelles applications ou évolutions sur les existantes.',
-            'Gestion du suivi des tâches à réaliser sur les différentes applications.',
-            'Maquettage des nouvelles applications ou des évolutions majeures à apporter sur les existantes.',
-            'Gestion de la relation client et aide à la décision concernant l’expression du besoin.'
+            new SubActivity('Réalisation de chiffrages pour le développement des nouvelles applications ou évolutions sur les existantes.'),
+            new SubActivity('Gestion du suivi des tâches à réaliser sur les différentes applications.'),
+            new SubActivity('Maquettage des nouvelles applications ou des évolutions majeures à apporter sur les existantes.'),
+            new SubActivity('Gestion de la relation client et aide à la décision concernant l’expression du besoin.')
           ]),
           new Activity(ActivityType.DEVELOPMENT, [
-            'Développement de corrections et d’évolutions.'
+            new SubActivity('Développement de corrections et d’évolutions.')
           ])
         ],
         new Environment(
@@ -125,33 +125,35 @@ export class HomeService {
         'Ingénieur chez SOLENT SAS pour KENZO',
         'KENZO',
         [
-          'Gestion d’un parc applicatif pour le client KENZO. Développement et maintenance d’applications web.',
-          'Travaux réalisés seuls jusqu’à Août 2017, puis en équipe de 2 personnes. ' +
-            'Mission principale : ~100 % jusqu’à Août 2017, puis 50%.'
+          'Gestion d’un parc applicatif pour le client KENZO.',
+          'Développement et maintenance d’applications web.',
+          'Travaux réalisés seuls jusqu’à Août 2017, puis en équipe de 2 personnes.',
+          'Mission principale : ~100 % jusqu’à Août 2017, puis 50%.'
         ],
         [
           new Activity(ActivityType.PROJECT_MANAGEMENT, [
-            'Réalisation de développements front-end / back-end.',
-            'Gestion du suivi des tâches à réaliser sur les différentes applications.',
-            'Maquettage des nouvelles applications ou des évolutions majeures à apporter sur les existantes.',
-            'Gestion de la relation client et aide à la décision concernant l’expression du besoin.',
-            'Rédaction de documentations techniques et fonctionnelles (cartographie fonctionnelle, guide utilisateur, ' +
-              'modèle physique de données, description des webservices, guide de déploiement, etc.).',
+            new SubActivity('Réalisation de développements front-end / back-end.'),
+            new SubActivity('Gestion du suivi des tâches à réaliser sur les différentes applications.'),
+            new SubActivity('Maquettage des nouvelles applications ou des évolutions majeures à apporter sur les existantes.'),
+            new SubActivity('Gestion de la relation client et aide à la décision concernant l’expression du besoin.'),
+            new SubActivity('Rédaction de documentations techniques et fonctionnelles (cartographie fonctionnelle, guide utilisateur, ' +
+              'modèle physique de données, description des webservices, guide de déploiement, etc.).'),
           ]),
           new Activity(ActivityType.DEVELOPMENT, [
-            'Migration des technologies front-end Adobe Flex vers AngularJS des applications ' +
-              'de gestion des commandes fournisseurs et du contrôle qualité.',
-            'Migration des technologies back-end Java 6 / Spring 5 / Jetty vers Java 8 / Spring Boot (des deux mêmes applications).',
-            'Développement « from scratch » d’applications web :',
-            '  - De gestion de tables de correspondances entre les données de plusieurs applications (Java 8 / Spring Boot / AngularJS)',
-            '  - D’exécution de jobs datastage via une interface simple d’utilisation (Java 8 / Spring Boot / AngularJS).',
-            '  - De gestion des blocages sur les produits et les planches pendant showroom (Java 8 / Spring Boot / AngularJS).',
-            '  - Backup d’une application externe de vente pendant showroom (Java 8 / Spring Boot / Angular 5).',
-            '  - De gestion du planning des rendez-vous client / vendeur pendant showroom (Java 8 / Spring Boot / Angular 5).',
-            '  - De saisie des fiches clients sur iPad (Java 8 / Spring Boot, Ionic v1).',
-            'Évolutions et corrections diverses sur les nouvelles applications ou les existantes.',
-            'Mise en place de tests unitaires.',
-            'Déploiement..'
+            new SubActivity('Migration des technologies front-end Adobe Flex vers AngularJS des applications ' +
+              'de gestion des commandes fournisseurs et du contrôle qualité.'),
+              new SubActivity('Migration des technologies back-end Java 6 / Spring 5 / Jetty vers Java 8 / Spring Boot (des deux mêmes applications).'),
+              new SubActivity('Développement « from scratch » d’applications web :', [
+                new SubActivity('De gestion de tables de correspondances entre les données de plusieurs applications (Java 8 / Spring Boot / AngularJS)'),
+                new SubActivity('D’exécution de jobs datastage via une interface simple d’utilisation (Java 8 / Spring Boot / AngularJS).'),
+                new SubActivity('De gestion des blocages sur les produits et les planches pendant showroom (Java 8 / Spring Boot / AngularJS).'),
+                new SubActivity('Backup d’une application externe de vente pendant showroom (Java 8 / Spring Boot / Angular 5).'),
+                new SubActivity('De gestion du planning des rendez-vous client / vendeur pendant showroom (Java 8 / Spring Boot / Angular 5).'),
+                new SubActivity('De saisie des fiches clients sur iPad (Java 8 / Spring Boot, Ionic v1).')
+              ]),
+            new SubActivity('Évolutions et corrections diverses sur les nouvelles applications ou les existantes.'),
+            new SubActivity('Mise en place de tests unitaires.'),
+            new SubActivity('Déploiement.')
           ])
         ],
         new Environment(
@@ -172,8 +174,8 @@ export class HomeService {
         ],
         [
           new Activity(ActivityType.DEVELOPMENT, [
-            'Réalisation de développements front-end / back-end.',
-            'Relecture de code.'
+            new SubActivity('Réalisation de développements front-end / back-end.'),
+            new SubActivity('Relecture de code.')
           ])
         ],
         new Environment(
@@ -195,9 +197,9 @@ export class HomeService {
         ],
         [
           new Activity(ActivityType.DEVELOPMENT, [
-            'Réalisation d’un model TensorFlow de reconnaissance d’objet à partir d’un modèle pré-entraîné.',
-            'Montage et programmation de la raspberry et de ses composants (caméra, servos moteurs).',
-            'Réalisation d’un programme de tracking.'
+            new SubActivity('Réalisation d’un model TensorFlow de reconnaissance d’objet à partir d’un modèle pré-entraîné.'),
+            new SubActivity('Montage et programmation de la raspberry et de ses composants (caméra, servos moteurs).'),
+            new SubActivity('Réalisation d’un programme de tracking.')
           ])
         ],
         new Environment(
