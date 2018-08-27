@@ -90,4 +90,14 @@ export class Environment {
   }
 }
 
+export class Skill {
+  title: string;
+  level: number; // 0 to 10
+  theme: number;
 
+  constructor(title: string, level: number, theme: number) {
+    this.title = title;
+    this.level = level;
+    this.theme = theme;
+  }
+}

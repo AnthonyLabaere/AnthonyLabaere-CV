@@ -4,7 +4,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {RouterModule, Routes} from '@angular/router';
-import {AccordionModule} from 'ngx-bootstrap';
+import {AccordionModule, ProgressbarModule} from 'ngx-bootstrap';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
@@ -44,7 +44,8 @@ const appRoutes: Routes = [
         deps: [HttpClient]
       }
     }),
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    ProgressbarModule.forRoot()
   ],
   providers: [
     CommonService,

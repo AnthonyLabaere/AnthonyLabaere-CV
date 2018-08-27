@@ -42,3 +42,32 @@ body {
     font-size: 14px;
   }
 }
+
+/* Barre de progression */
+.progress-bar-1 bar {
+  background-color: lightskyblue;
+}
+.progress-bar-2 bar {
+  background-color: cornflowerblue;
+}
+.progress-bar-3 bar {
+  background-color: lightblue;
+}
+.progress-bar-4 bar {
+  background-color: lightseagreen;
+}
+.progress-bar-5 bar {
+  background-color: cadetblue;
+}
+.progress-bar-6 bar {
+  background-color: dodgerblue;
+}
+.progress-bar-7 bar {
+  background-color: powderblue;
+}
+.progress-bar-8 bar {
+  background-color: cyan;
+}
+.progress-bar-9 bar {
+  background-color: darkcyan;
+}

@@ -1,12 +1,23 @@
 import {Injectable} from '@angular/core';
-import {Activity, ActivityType, Environment, Experience, SubActivity, Formation, FormationLogo} from '../entities';
+import {Activity, ActivityType, Environment, Experience, SubActivity, Formation, FormationLogo, Skill} from '../entities';
 
 import * as moment from 'moment';
 
 @Injectable()
 export class HomeService {
+
+  private static SKILL_JAVA_THEME = 1;
+  private static SKILL_JS_THEME = 2;
+  private static SKILL_WEB_THEME = 3;
+  private static SKILL_NEURAL_NETWORK_THEME = 4;
+  private static SKILL_DB_THEME = 5;
+  private static SKILL_VERSIONING_THEME = 6;
+  private static SKILL_IDE_THEME = 7;
+  private static SKILL_MODELING_THEME = 8;
+  private static SKILL_PROJECT_MANAGEMENT_THEME = 9;
+
   public getFormations(): Formation[] {
-    const formations = [];
+    const formations: Formation[] = [];
 
     formations.push(new Formation(
       new FormationLogo('faidherbe_logo.gif', 'Faidherbe logo'),
@@ -27,7 +38,7 @@ export class HomeService {
   }
 
   public getExperiences(): Experience[] {
-    const experiences = [];
+    const experiences: Experience[] = [];
 
     experiences.push(
       new Experience(
@@ -232,5 +243,39 @@ export class HomeService {
     );
 
     return experiences;
+  }
+
+  public getSkills(): Skill[] {
+    let skills: Skill[] = [];
+
+    skills.push(
+      new Skill('Java', 8, HomeService.SKILL_JAVA_THEME),
+      new Skill('Spring (Boot)', 7, HomeService.SKILL_JAVA_THEME),
+      new Skill('Hibernate', 8, HomeService.SKILL_JAVA_THEME),
+      new Skill('Maven', 6, HomeService.SKILL_JAVA_THEME),
+      new Skill('Javascript', 8, HomeService.SKILL_JS_THEME),
+      new Skill('NodeJS', 4, HomeService.SKILL_JS_THEME),
+      new Skill('AngularJS', 8, HomeService.SKILL_JS_THEME),
+      new Skill('Angular', 8, HomeService.SKILL_JS_THEME),
+      new Skill('Ionic', 6, HomeService.SKILL_JS_THEME),
+      new Skill('Loopback', 5, HomeService.SKILL_JS_THEME),
+      new Skill('ReactJS', 6, HomeService.SKILL_JS_THEME),
+      new Skill('HTML - CSS', 9, HomeService.SKILL_WEB_THEME),
+      new Skill('SASS', 7, HomeService.SKILL_WEB_THEME),
+      new Skill('Python', 3, HomeService.SKILL_NEURAL_NETWORK_THEME),
+      new Skill('TensorFlow', 2, HomeService.SKILL_NEURAL_NETWORK_THEME),
+      new Skill('SQL Server', 7, HomeService.SKILL_DB_THEME),
+      new Skill('MySQL', 5, HomeService.SKILL_DB_THEME),
+      new Skill('MongoDB', 4, HomeService.SKILL_DB_THEME),
+      new Skill('SVN', 7, HomeService.SKILL_VERSIONING_THEME),
+      new Skill('Git', 8, HomeService.SKILL_VERSIONING_THEME),
+      new Skill('IntelliJ', 9, HomeService.SKILL_IDE_THEME),
+      new Skill('Eclipse', 6, HomeService.SKILL_IDE_THEME),
+      new Skill('Visual Code', 3, HomeService.SKILL_IDE_THEME),
+      new Skill('Axure', 1, HomeService.SKILL_MODELING_THEME),
+      new Skill('Agile', 7, HomeService.SKILL_PROJECT_MANAGEMENT_THEME),
+    );
+
+    return skills;
   }
 }

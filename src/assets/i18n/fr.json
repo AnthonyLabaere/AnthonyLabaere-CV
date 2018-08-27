@@ -8,7 +8,7 @@
     "about-me": "Présentation",
     "formation": "Formation",
     "experiences": "Expériences",
-    "competences": "Compétences",
+    "skills": "Compétences",
     "leisure": "Loisirs"
   },
   "home": {
@@ -56,7 +56,7 @@
       }
     }
   },
-  "competences": {
+  "skills": {
     "title": "Compétences"
   },
   "leisure": {
