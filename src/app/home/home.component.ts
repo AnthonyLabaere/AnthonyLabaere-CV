@@ -54,7 +54,11 @@ export class HomeComponent implements OnInit {
   }
 
   getExperiencePeriod(experience: Experience): string {
-    return experience.getPeriod(this.periodSeparator);
+    if (experience) {
+      return experience.getPeriod(this.periodSeparator);
+    } else {
+      return '';
+    }
   }
   
   onBackToExperiencesListClick() {

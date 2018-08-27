@@ -12,10 +12,10 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 4).set('year', 2012).toDate(),
         moment().set('date', 1).set('month', 11).set('year', 2012).toDate(),
-        'Stagiaire Ingénieur Sopra Group en césure pour CNAMTS',
+        'Stagiaire en césure chez SOPRA GROUP',
         'CNAMTS',
         [
-          'Intégration au sein d\'une équipe chez SOPRA GROUP.'
+          'Intégration au sein d\'une équipe.'
         ],
         [
           new Activity(ActivityType.DEVELOPMENT, [
@@ -34,10 +34,10 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 0).set('year', 2013).toDate(),
         moment().set('date', 1).set('month', 3).set('year', 2013).toDate(),
-        'Stagiaire Ingénieur Sopra Group en césure pour DGDDI',
+        'Stagiaire en césure chez SOPRA GROUP',
         'DGDDI',
         [
-          'Intégration au sein d\'une équipe chez SOPRA GROUP.'
+          'Intégration au sein d\'une équipe.'
         ],
         [
           new Activity(ActivityType.DEVELOPMENT, [
@@ -53,7 +53,7 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 4).set('year', 2013).toDate(),
         moment().set('date', 1).set('month', 7).set('year', 2013).toDate(),
-        'Stagiaire Ingénieur LERO en césure',
+        'Stagiaire en césure au LERO à Dublin',
         'LERO',
         [
           'Réalisation, à 5 stagiaires, d’un démonstrateur de projets de recherche sous la forme d’un gestionnaire de trafic à Dublin.'
@@ -72,7 +72,7 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 3).set('year', 2014).toDate(),
         moment().set('date', 1).set('month', 8).set('year', 2014).toDate(),
-        'Stagiaire Ingénieur EUROGICIEL',
+        'Stagiaire chez EUROGICIEL.',
         'EUROGICIEL',
         [
           'Gestion et maintenance d’une application de suivi de carrière des cadres dirigeants.',
@@ -95,7 +95,7 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 10).set('year', 2014).toDate(),
         moment().set('date', 1).set('month', 10).set('year', 2016).toDate(),
-        'Ingénieur chez SOLENT SAS pour la FNCA',
+        'Ingénieur chez SOLENT SAS',
         'FNCA',
         [
           'Gestion et maintenance d’une application de suivi de carrière des cadres dirigeants.',
@@ -122,7 +122,7 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 1).set('year', 2015).toDate(),
         moment().set('date', 1).set('month', 7).set('year', 2018).toDate(),
-        'Ingénieur chez SOLENT SAS pour KENZO',
+        'Ingénieur chez SOLENT SAS',
         'KENZO',
         [
           'Gestion d’un parc applicatif pour le client KENZO.',
@@ -166,7 +166,7 @@ export class HomeService {
       new Experience(
         moment().set('date', 1).set('month', 7).set('year', 2017).toDate(),
         moment().set('date', 1).set('month', 7).set('year', 2018).toDate(),
-        'Ingénieur chez SOLENT SAS pour VULCAIN INGÉNIERIE',
+        'Ingénieur chez SOLENT SAS',
         'VULCAIN INGÉNIERIE',
         [
           'Réalisation d’une application de gestion des comptes rendus d’activités.',

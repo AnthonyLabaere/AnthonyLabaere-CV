@@ -68,10 +68,19 @@
           <div class="col col-1 col-back-icon" (click)="onBackToExperiencesListClick()">
             <i class="fa fa-arrow-left"></i>
           </div>
-          <div class="col col-10 col-title">
-            <h3 class="text-center">{{selectedExperience?.customer}}</h3>
-            <!--<h3 class="text-center">{{selectedExperience?.summary}}</h2>-->
+          <div class="col col-10">
+            <div class="row">
+              <div class="col col-12 col-title">
+                <h3 class="text-center">{{selectedExperience?.customer}} ({{getExperiencePeriod(selectedExperience)}})</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-12 col-subtitle">
+                <h5 class="text-center">{{selectedExperience?.position}}</h5>
+              </div>
+            </div>
           </div>
+          <div class="col col-1"></div>
         </div>
 
         <accordion [closeOthers]="true">

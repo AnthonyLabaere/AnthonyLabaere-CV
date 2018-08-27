@@ -141,6 +141,15 @@
                 margin-bottom: 0;
               }
             }
+
+            .col-subtitle {
+              margin: auto 0;
+              color: darkgray;
+              h5 {
+                margin-top: 10px;
+                margin-bottom: 0;
+              }
+            }
           }
         }
       }
@@ -217,6 +226,12 @@
               .col-title {
                 h3 {
                   font-size: 18px;
+                }
+              }
+
+              .col-subtitle {
+                h5 {
+                  font-size: 12px;
                 }
               }
             }
