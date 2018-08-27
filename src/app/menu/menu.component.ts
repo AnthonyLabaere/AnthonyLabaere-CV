@@ -27,7 +27,7 @@ export class MenuComponent implements OnInit, AfterViewInit {
   public static MENU_DISPLAYED_STATE = 'displayed';
 
   public fragment = 'home';
-  public showMenu = true;
+  public showMenu = false;
 
   constructor(private route: ActivatedRoute) { }
 
